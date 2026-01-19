@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JP Pixel Art</title>
+
+  <script>
+    (function () {
+      const width = window.innerWidth;
+
+      // Prevent redirect loop
+      const path = window.location.pathname;
+
+      if (width < 1024 && !path.includes("/mobile/")) {
+        window.location.replace("mobile/index.html");
+      }
+
+      if (width >= 1024 && !path.includes("/desktop/")) {
+        window.location.replace("desktop/index.html");
+      }
+    })();
+  </script>
+</head>
+<body>
+</body>
+</html>
