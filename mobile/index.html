@@ -10,6 +10,17 @@
   </script>
   <script src="/static/anima.min.js" type="module">
   </script>
+  <script>
+  (function () {
+    const isMobile = window.innerWidth <= 768;
+
+    if (!isMobile) {
+      // Someone opened mobile link on desktop
+      location.replace("../desktop/index.html");
+    }
+  })();
+</script>
+
  </head>
  <body>
   <div class="iphone-pro" data-model-id="595:28">
