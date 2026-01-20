@@ -6,6 +6,17 @@
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
+  <script>
+  (function () {
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile) {
+      // Someone opened desktop link on mobile
+      location.replace("../mobile/index.html");
+    }
+  })();
+</script>
+
   <body>
     <div class="JP-pixel-art">
       <div class="ellipse"></div>
