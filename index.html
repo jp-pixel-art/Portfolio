@@ -2,25 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JP Pixel Art</title>
 
   <script>
-    (function () {
+    function redirectBasedOnWidth() {
       const width = window.innerWidth;
 
-      // Prevent redirect loop
-      const path = window.location.pathname;
-
-      if (width < 1024 && !path.includes("/mobile/")) {
-        window.location.replace("mobile/index.html");
+      if (width <= 768) {
+        window.location.replace("./mobile/index.html");
+      } else {
+        window.location.replace("./desktop/index.html");
       }
+    }
 
-      if (width >= 1024 && !path.includes("/desktop/")) {
-        window.location.replace("desktop/index.html");
-      }
-    })();
+    redirectBasedOnWidth();
   </script>
+
+  <!-- Fallback if JS is disabled -->
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=./desktop/index.html">
+  </noscript>
 </head>
 <body>
 </body>
